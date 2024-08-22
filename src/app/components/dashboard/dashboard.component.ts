@@ -10,16 +10,15 @@ export class DashboardComponent implements OnInit {
   cards: any[] = [];
   filteredCards: any[] = [];
   searchTerm: string = '';
+  dashboardData: string = 'student'; // Default to 'student'
 
   constructor(private http: HttpService) {}
-
-  dashboardData?: string;
 
   ngOnInit(): void {
     this.http.getApiCall("").subscribe({
       next: (res: any) => {
         this.cards = res;
-        this.filteredCards = res;
+        this.filterCards(); // Apply initial filter
       },
       error: (err: Error) => {
         console.log(err);
@@ -29,9 +28,10 @@ export class DashboardComponent implements OnInit {
 
   filterCards(): void {
     this.filteredCards = this.cards.filter(card => 
-      card.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+      (this.dashboardData === 'all' || card.role === this.dashboardData) &&
+      (card.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
       card.email.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-      card.address.toLowerCase().includes(this.searchTerm.toLowerCase())
+      card.address.toLowerCase().includes(this.searchTerm.toLowerCase()))
     );
   }
 }
