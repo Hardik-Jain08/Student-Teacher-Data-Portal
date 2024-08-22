@@ -12,6 +12,7 @@ import { CardComponent } from './components/card/card.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     AddUserComponent,
     DashboardComponent,
     CardComponent,
-    AvatarComponent
+    AvatarComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
