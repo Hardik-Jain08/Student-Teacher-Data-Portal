@@ -1,5 +1,15 @@
 <div ngClass="navbar">
-    <span class="material-symbols-outlined"> menu </span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <span class="material-symbols-outlined"> menu </span>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [disabled]="isDashboard" (click)="handleNavigation('/dashboard')">
+          <span>Dashboard</span>
+        </button>
+        <button mat-menu-item [disabled]="isUserForm" (click)="handleNavigation('/new-user')">
+          <span>Add New User</span>
+        </button>
+      </mat-menu>
     <span class="nav-title">Student Teacher Data Portal</span>
     <app-avatar></app-avatar>
   </div>
