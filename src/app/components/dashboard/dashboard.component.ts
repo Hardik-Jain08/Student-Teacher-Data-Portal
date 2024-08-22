@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,18 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
+  cards: any;
+  constructor(private http: HttpService) { }
   dashboardData?: string;
   ngOnInit(): void {
+    this.http.getApiCall("").subscribe({
+      next: (res: any) => {
+        this.cards = res;
+      },
+      error: (err: Error) => {
+        console.log(err);
+      }
+    });
   }
-  cards = [
-    {
-      "name": "Jennie Nichols",
-      "email": "example@gmail.com",
-      "address": "8929 Valwood Pkwy, Billings, Michigan, 63104",
-      "role": "Admin",
-      "imgUrl": "https://material.angular.io/assets/img/examples/shiba1.jpg"
-    }
-  ]
 }

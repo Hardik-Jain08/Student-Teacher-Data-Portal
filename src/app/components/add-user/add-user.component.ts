@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpService } from '../../services/http.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-user',
@@ -9,37 +10,35 @@ import { HttpService } from '../../services/http.service';
 })
 export class AddUserComponent implements OnInit {
   addUserForm: FormGroup;
-  constructor(private fb: FormBuilder, private http: HttpService) {
+
+  constructor(private fb: FormBuilder, private http: HttpService, private Router: Router) {
     this.addUserForm = this.fb.group({
-      name: this.fb.control('', [Validators.required]),
-      email: this.fb.control('', [Validators.required, Validators.email]),
-      password: this.fb.control('', [Validators.required, Validators.minLength(6)])
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
+      address: ['', [Validators.required]],
+      role: ['', [Validators.required]],
     });
   }
-  ngOnInit(): void {
-  }
-  
+
+  ngOnInit(): void {}
+
   onSubmit(form: FormGroup) {
     console.log(form.value);
-    let data = {
-      firstName: form.value.name.split(' ')[0],
-      lastName: form.value.name.split(' ')[1] || "string",
-      service: 'string',
+    const data = {
+      name: form.value.name,
       email: form.value.email,
-      password: form.value.password
+      address: form.value.address,
+      role: form.value.role,
     };
     console.log(data);
-    this.http.post(""data).subscribe({
+    this.http.postApiCall("", data).subscribe({
       next: (res: any) => {
         console.log(res);
-        window.location.href = '/';
-      },
+        this.Router.navigate(['/dashboard']);
+        },
       error: (err: Error) => {
         console.log(err);
       }
     });
   }
-
 }
-
-
