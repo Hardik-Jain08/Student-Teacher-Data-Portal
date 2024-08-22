@@ -1,21 +1,22 @@
 <div>
-  <!-- dashboard functions -->
-  <div class="dashboard-functions">
-    <!-- PageName -->
-    <span style="font-size: large;">Dashboard</span>
-    <!-- search -->
-    <div ngClass="search-container">
-      <span class="material-symbols-outlined"> search </span>
-      <input type="text" placeholder="Search" />
-    </div>
-    <!-- toggle dashboard -->
-    <mat-button-toggle-group [(ngModel)]="dashboardData" aria-label="Font Style">
+    <!-- dashboard functions -->
+    <div class="dashboard-functions">
+      <!-- PageName -->
+      <span style="font-size: large;">Dashboard</span>
+      <!-- search -->
+      <div ngClass="search-container">
+        <span class="material-symbols-outlined"> search </span>
+        <input type="text" placeholder="Search" [(ngModel)]="searchTerm" (input)="filterCards()" />
+      </div>
+      <!-- toggle dashboard -->
+      <mat-button-toggle-group [(ngModel)]="dashboardData" aria-label="Font Style">
         <mat-button-toggle value="student">Student</mat-button-toggle>
         <mat-button-toggle value="teacher">Teacher</mat-button-toggle>
       </mat-button-toggle-group>
+    </div>
+    <!-- cards container -->
+    <div class="cards-container">
+      <app-card *ngFor="let card of filteredCards" [cardDetails]="card"></app-card>
+    </div>
   </div>
-  <!-- cards container -->
-  <div class="cards-container">
-    <app-card *ngFor="let card of cards" [cardDetails]="card"></app-card>
-  </div>
-</div>
+  
