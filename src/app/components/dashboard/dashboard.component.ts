@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { userI } from 'src/app/interfaces/user';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
@@ -7,10 +8,10 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  cards: any[] = [];
+  cards: userI[] = [];
   filteredCards: any[] = [];
   searchTerm: string = '';
-  dashboardData: string = 'student'; // Default to 'student'
+  dashboardData: string = 'student';
 
   constructor(private http: HttpService) {}
 
@@ -18,7 +19,7 @@ export class DashboardComponent implements OnInit {
     this.http.getApiCall("").subscribe({
       next: (res: any) => {
         this.cards = res;
-        this.filterCards(); // Apply initial filter
+        this.filterCards();
       },
       error: (err: Error) => {
         console.log(err);
@@ -33,5 +34,10 @@ export class DashboardComponent implements OnInit {
       card.email.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
       card.address.toLowerCase().includes(this.searchTerm.toLowerCase()))
     );
+  }
+
+  onDeleteCard(card: any): void {
+    this.cards = this.cards.filter(c => c !== card);
+    this.filterCards();
   }
 }

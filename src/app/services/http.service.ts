@@ -14,4 +14,7 @@ export class HttpService {
   getApiCall(endpoint : string){
     return this.http.get(environment.BASE_URL + endpoint);
   }
+  deleteApiCall(endpoint : string){
+    return this.http.delete(environment.BASE_URL + endpoint);
+  }
 }

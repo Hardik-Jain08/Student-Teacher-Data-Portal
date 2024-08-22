@@ -17,7 +17,8 @@
     </div>
     <!-- cards container -->
     <div class="cards-container">
-      <app-card *ngFor="let card of filteredCards" [cardDetails]="card"></app-card>
-    </div>
+        <app-card *ngFor="let card of filteredCards" [cardDetails]="card" (delete)="onDeleteCard($event)"></app-card>
+      </div>
+      
   </div>
   
