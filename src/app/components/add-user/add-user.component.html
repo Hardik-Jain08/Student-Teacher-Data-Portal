@@ -1,1 +1,18 @@
-<p>add-user works!</p>
+<div class="adduser-body">
+    <form [formGroup]="addUserForm" (ngSubmit)="onSubmit(addUserForm)">
+        <h1>Create Account</h1>
+        <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <span>or use your email for registration</span>
+        <input formControlName="name" type="text" placeholder="Name" />
+        <div style="transform: translate(80%, -10px); color: red" *ngIf="addUserForm.get('name')!.invalid && (addUserForm.get('name')!.dirty || addUserForm.get('name')!.touched)">
+            Please provide a name.
+          </div>
+        <input formControlName="email" type="email" placeholder="Email" />
+        <input formControlName="password" type="password" placeholder="Password" />
+        <button type="submit" [disabled]="!addUserForm.valid">Sign Up</button>
+    </form>
+</div>

@@ -1,0 +1,33 @@
+.dashboard-functions {
+    display: flex;
+    padding: 20px 80px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-container {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    gap: 1rem;
+    background-color: #f1f3f4;
+    padding: 10px 16px;
+    border-radius: 500px;
+    align-items: center;
+    input {
+        width: 100%;
+        border: none;
+        outline: none;
+        background-color: #f1f3f4;
+    }
+    margin-left: 5%;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 20px 80px;
+}

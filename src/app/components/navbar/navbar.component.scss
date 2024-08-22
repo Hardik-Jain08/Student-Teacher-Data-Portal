@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 30px;
+    background-color: #fff;
+    border-bottom: 2px solid #f1f3f4;
+}
+
+.search-container {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    gap: 1rem;
+    background-color: #f1f3f4;
+    padding: 10px 16px;
+    border-radius: 5px;
+    align-items: center;
+    input {
+        border: none;
+        outline: none;
+        background-color: #f1f3f4;
+    }
+}
+.nav-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}

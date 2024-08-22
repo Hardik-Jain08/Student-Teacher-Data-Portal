@@ -1,1 +1,17 @@
-<p>card works!</p>
+<mat-card class="example-card">
+    <mat-card-header>
+        <div mat-card-avatar [ngStyle]="{'background-image': 'url(' + cardDetails!.imgUrl + ')'}" class="example-header-image"></div>
+      <mat-card-title style="font-size: medium;">{{cardDetails!.name}}</mat-card-title>
+      <mat-card-subtitle style="font-size: small;">{{cardDetails!.role}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content style="display: flex; justify-content: space-between; gap: 20px;">
+        <div style="display: flex; flex-direction: column;">
+            <span style="font-size: medium; font-weight: 500;">{{cardDetails!.email}}</span>
+            <span style="font-size: x-small; font-weight: 400;">{{cardDetails!.address}}</span>
+        </div>
+        <mat-card-actions>
+          <button mat-button>Delete</button>
+        </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+  

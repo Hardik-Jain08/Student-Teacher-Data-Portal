@@ -1,0 +1,10 @@
+{
+    "users": [
+        {
+            "name": "Hardik Jain",
+            "email": "hardik.jain@godigit.com",
+            "address": "New Delhi, India",
+            "role": "Student"
+        }
+    ]
+}
