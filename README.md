@@ -8,6 +8,14 @@ The Student Teacher Data Portal is an Angular application designed to manage stu
 ![Project Image](https://github.com/Hardik-Jain-08/Student-Teacher-Data-Portal/blob/master/src/assets/UI/addUser.jpeg?raw=true)
 ![Project Image](https://github.com/Hardik-Jain-08/Student-Teacher-Data-Portal/blob/master/src/assets/UI/card.jpeg?raw=true)
 ![Project Image](https://github.com/Hardik-Jain-08/Student-Teacher-Data-Portal/blob/master/src/assets/UI/dashboard.jpeg?raw=true)
+
+## Installation
+1. Clone the repository.
+2. Run `npm install` to install the dependencies.
+3. Run `npx json-server src/app/db/db.json` to start the JSON server.
+4. Run `ng serve` to start the Angular application.
+5. Navigate to `http://localhost:4200/` to view the application.
+
 ## Features
 - Add new student or teacher records.
 - View records in a card format.
@@ -26,3 +34,12 @@ The Student Teacher Data Portal is an Angular application designed to manage stu
 
 ## Services
 - **HttpService**: Handles API calls to the JSON server.
+
+## Pipes
+- **SearchPipe**: Filters records based on search input.
+
+
+## Technologies
+- Angular
+- Angular Material
+- JSON Server
