@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 import { SearchPipe } from './pipes/search.pipe';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SearchPipe } from './pipes/search.pipe';
     CardComponent,
     AvatarComponent,
     ConfirmationDialogComponent,
-    SearchPipe
+    SearchPipe,
+    SnackbarComponent
   ],
   imports: [
     BrowserModule,

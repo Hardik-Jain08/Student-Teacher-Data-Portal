@@ -34,48 +34,6 @@
       "email": "Ishu.gupta@godigit.com",
       "address": "Jhansi, Madhya Pradesh, India",
       "role": "student"
-    },
-    {
-      "name": "Hardik Jain",
-      "email": "hardik.jain@godigit.com",
-      "address": "New Delhi, India",
-      "role": "student",
-      "id": "6bd2"
-    },
-    {
-      "id": "d1f3",
-      "name": "Vardaan Gupta",
-      "email": "vardaan.gupta@godigit.com",
-      "address": "Sonipat, Haryana, India",
-      "role": "student"
-    },
-    {
-      "id": "4379",
-      "name": "Roshni Mali",
-      "email": "Roshni.Mali@bridgelabz.com",
-      "address": "Jaipur, Rajasthan, India",
-      "role": "teacher"
-    },
-    {
-      "id": "4689",
-      "name": "Nagendra",
-      "email": "Nagendra@bridgelabz.com",
-      "address": "Bandra, Mumbai, India",
-      "role": "teacher"
-    },
-    {
-      "id": "b2a9",
-      "name": "Ritika Negi",
-      "email": "ritika.negi@godigit.com",
-      "address": "Gurgaon, Haryana, India",
-      "role": "student"
-    },
-    {
-      "id": "f333",
-      "name": "Ishu Gupta",
-      "email": "Ishu.gupta@godigit.com",
-      "address": "Jhansi, Madhya Pradesh, India",
-      "role": "student"
     }
   ]
 }
