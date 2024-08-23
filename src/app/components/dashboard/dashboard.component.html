@@ -6,7 +6,7 @@
       <!-- search -->
       <div ngClass="search-container">
         <span class="material-symbols-outlined"> search </span>
-        <input type="text" placeholder="Search" [(ngModel)]="searchTerm" (input)="filterCards()" />
+        <input type="text" placeholder="Search" [(ngModel)]="searchTerm" ((keyup))="filterCards()" />
       </div>
       <!-- toggle dashboard -->
       <mat-button-toggle-group [(ngModel)]="dashboardData" (change)="filterCards()" aria-label="Font Style">
@@ -17,7 +17,7 @@
     </div>
     <!-- cards container -->
     <div class="cards-container">
-        <app-card *ngFor="let card of filteredCards" [cardDetails]="card" (delete)="onDeleteCard($event)"></app-card>
+        <app-card *ngFor="let card of cards | search:searchTerm:dashboardData" [cardDetails]="card" (delete)="onDeleteCard($event)"></app-card>
       </div>
       
   </div>

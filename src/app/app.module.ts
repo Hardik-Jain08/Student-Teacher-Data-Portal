@@ -13,6 +13,7 @@ import { AvatarComponent } from './components/avatar/avatar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ConfirmationDialogComponent } from './components/confirmation-dialog/co
     DashboardComponent,
     CardComponent,
     AvatarComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
